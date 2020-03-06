@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 import ProductGrid from '../ProductGrid';
+import { BrowserRouter as Router, Route, NavLink, Switch, Link } from 'react-router-dom';
+import ProductDetails from '../ProductDetails';
 
 export default class Product extends Component {
     constructor(props) {
@@ -15,7 +17,6 @@ export default class Product extends Component {
         Axios.get('http://localhost:3001/categories')
             .then(function (response) {
                 // handle success
-                console.log('response', response.data);
                 self.setState({ categories: response.data });
                 self.getproducts('', response.data[0].id)
             })
@@ -34,12 +35,10 @@ export default class Product extends Component {
         } else {
             selectedCategory = ev.target.value
         }
-        console.log('categoryId', categoryId);
         let self = this;
         Axios.get('http://localhost:3001/products?categoryId=' + selectedCategory)
             .then(function (response) {
                 // handle success
-                console.log('products', response.data);
                 self.setState({ products: response.data });
             })
             .catch(function (error) {
@@ -67,7 +66,20 @@ export default class Product extends Component {
                     </div>
                 </div>
                 <hr />
-                <ProductGrid></ProductGrid>
+                <div className="row">
+                    <Router>
+                        {
+                            this.state.products.map((Product, index) => (
+                                <Link to={{ pathname: 'productdetails/' + [Product.id] }} key={index}>
+                                    <ProductGrid  productImage={Product.image} productId={Product.id} productName={Product.productName} categoryId={Product.categoryId} />
+                                </Link>
+                            ))
+                        }
+                        <Switch>
+                            <Route path="/productdetails/:id" component={ProductDetails}></Route>
+                        </Switch>
+                    </Router>
+                </div>
             </div>
         )
     }
