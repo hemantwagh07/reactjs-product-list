@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Instructions to run this application on local enviornment 
+Instructions to run this application on local environment 
 
 Goto downloaded folder location using command prompt and run `npm install`. This will install all the required dependencies. Wait untill this finishes
 
