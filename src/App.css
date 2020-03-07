@@ -5,7 +5,12 @@
   width: 18rem;
   margin: 15px;
 }
-
+h2{
+text-align: center;
+}
+.form-group label{
+  text-align: right;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 import ProductGrid from '../ProductGrid';
-import { BrowserRouter as Router, Route, NavLink, Switch, Link } from 'react-router-dom';
-import ProductDetails from '../ProductDetails';
 
 export default class Product extends Component {
     constructor(props) {
@@ -52,11 +50,11 @@ export default class Product extends Component {
     render() {
         return (
             <div className="container">
-                <h1>Product Listing Page</h1>
-                <div className="row">
-                    <div className="form-group">
-                        <label htmlFor="category">Category</label>
-                        <select className="form-control" id="category" onChange={this.getproducts}>
+                <h2>Product Listing Page</h2>
+                
+                    <div className="form-group row">
+                        <label htmlFor="category" className="col-sm-4">Category</label>
+                        <select className="form-control col-sm-2" id="category" onChange={this.getproducts}>
                             {
                                 this.state.categories.map((category, index) => (
                                     <option key={category.id} value={category.id}>{category.name}</option>
@@ -64,21 +62,10 @@ export default class Product extends Component {
                             }
                         </select>
                     </div>
-                </div>
+             
                 <hr />
                 <div className="row">
-                    <Router>
-                        {
-                            this.state.products.map((Product, index) => (
-                                <Link to={{ pathname: 'productdetails/' + [Product.id] }} key={index}>
-                                    <ProductGrid  productImage={Product.image} productId={Product.id} productName={Product.productName} categoryId={Product.categoryId} />
-                                </Link>
-                            ))
-                        }
-                        <Switch>
-                            <Route path="/productdetails/:id" component={ProductDetails}></Route>
-                        </Switch>
-                    </Router>
+                    <ProductGrid productData={this.state.products} />
                 </div>
             </div>
         )

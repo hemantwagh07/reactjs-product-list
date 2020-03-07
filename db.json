@@ -18,67 +18,78 @@
       "id": 1,
       "productName": "laptop1",
       "categoryId":1,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of laptop1"
     },
     {
       "id": 2,
       "productName": "laptop2",
       "categoryId":1,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of laptop2"
     },
     {
       "id": 3,
       "productName": "Speakers1",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers1"
     },
     {
       "id": 4,
       "productName": "Speakers2",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers2"
     },
     {
       "id": 5,
       "productName": "Mobiles1",
       "categoryId":2,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Mobiles1"
     },
     {
       "id": 6,
       "productName": "Mobiles2",
       "categoryId":2,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Mobiles2"
     },
     {
       "id": 7,
       "productName": "Mobiles3",
       "categoryId":2,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Mobiles3"
     },
     {
       "id": 8,
       "productName": "Speakers3",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers3"
     },
     {
       "id": 9,
       "productName": "Speakers4",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers4"
     },
     {
       "id": 10,
       "productName": "Speakers5",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers5"
     },
     {
       "id": 11,
       "productName": "Speakers6",
       "categoryId":3,
-      "image":"/computer.png"
+      "image":"/computer.png",
+      "description":"product desc of Speakers6"
     }
   ]
 }
