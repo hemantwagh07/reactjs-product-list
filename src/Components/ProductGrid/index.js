@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function ProductGrid(props) {
+    let { productData } = props;
     return (
-        props.productData.map((Product, index) => (
-            <Link to={'/product/' + Product.id} key={index}>
+        productData.map(({ id, image, productName }) => (
+            <Link to={'/product/' + id} key={id}>
                 <div className="col-sm-4">
                     <div className="card">
-                        <img className="card-img-top" src={Product.image} alt={Product.productName} />
+                        <img className="card-img-top" src={image} alt={productName} />
                         <div className="card-body">
-                            <h5 className="card-title">{Product.productName}</h5>
+                            <h5 className="card-title">{productName}</h5>
                         </div>
                     </div>
                 </div>

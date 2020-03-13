@@ -10,12 +10,11 @@ export default class ProductDetails extends Component {
         }
     }
     componentDidMount() {
-        let self = this;
         Axios.get('http://localhost:3001/products/' + this.props.match.params.id)
-            .then(function (response) {
+            .then((response) => {
                 // handle success                
-                self.setState({ productDetails: response.data });
-                self.getCategoryDetails(response.data.categoryId);
+                this.setState({ productDetails: response.data });
+                this.getCategoryDetails(response.data.categoryId);
             })
             .catch(function (error) {
                 // handle error
@@ -26,11 +25,10 @@ export default class ProductDetails extends Component {
             });
     }
     getCategoryDetails = (categoryId) => {
-        let self = this;
         Axios.get('http://localhost:3001/categories/' + categoryId)
-            .then(function (response) {
+            .then((response) => {
                 // handle success
-                self.setState({ categoryDetails: response.data });
+                this.setState({ categoryDetails: response.data });
             })
             .catch(function (error) {
                 // handle error
@@ -42,18 +40,19 @@ export default class ProductDetails extends Component {
     }
 
     render() {
+        let {image, productName, description} = this.state.productDetails;
         return (
             <div id="productDetails" className="container">
                 <h2>Product Details Page</h2>
-                <hr />
+                <hr/>
                 <div className="row">
                     <div className="col-4">
-                        <img className="card-img-top" src={this.state.productDetails.image} alt={this.state.productDetails.productName} />
+                        <img className="card-img-top" src={image} alt={productName} />
                     </div>
                     <div className="col-4">
                         <p>Category: {this.state.categoryDetails.name}</p>
-                        <p>Product Name: {this.state.productDetails.productName}</p>
-                        <p>Product Description: {this.state.productDetails.description} </p>
+                        <p>Product Name: {productName}</p>
+                        <p>Product Description: {description} </p>
                     </div>
                 </div>
             </div>

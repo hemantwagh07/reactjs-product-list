@@ -5,18 +5,19 @@ import ProductGrid from '../ProductGrid';
 export default class Product extends Component {
     constructor(props) {
         super(props);
+        console.log(props);
+        
         this.state = {
             categories: [],
             products: [],
         }
     }
-    componentDidMount() {
-        let self = this;
+    componentDidMount = () => {
         Axios.get('http://localhost:3001/categories')
-            .then(function (response) {
+            .then(response => {
                 // handle success
-                self.setState({ categories: response.data });
-                self.getproducts('', response.data[0].id)
+                this.setState({ categories: response.data });
+                this.getproducts('', response.data[0].id)
             })
             .catch(function (error) {
                 // handle error
@@ -33,11 +34,10 @@ export default class Product extends Component {
         } else {
             selectedCategory = ev.target.value
         }
-        let self = this;
         Axios.get('http://localhost:3001/products?categoryId=' + selectedCategory)
-            .then(function (response) {
+            .then(response => {
                 // handle success
-                self.setState({ products: response.data });
+                this.setState({ products: response.data });
             })
             .catch(function (error) {
                 // handle error
@@ -51,18 +51,18 @@ export default class Product extends Component {
         return (
             <div className="container">
                 <h2>Product Listing Page</h2>
-                
-                    <div className="form-group row">
-                        <label htmlFor="category" className="col-sm-4">Category</label>
-                        <select className="form-control col-sm-2" id="category" onChange={this.getproducts}>
-                            {
-                                this.state.categories.map((category, index) => (
-                                    <option key={category.id} value={category.id}>{category.name}</option>
-                                ))
-                            }
-                        </select>
-                    </div>
-             
+
+                <div className="form-group row">
+                    <label htmlFor="category" className="col-sm-4">Category</label>
+                    <select className="form-control col-sm-2" id="category" onChange={this.getproducts}>
+                        {
+                            this.state.categories.map(({id,name}) => (
+                                <option key={id} value={id}>{name}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+
                 <hr />
                 <div className="row">
                     <ProductGrid productData={this.state.products} />
