@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/reactjs-product-list/static/css/main.85ee5e94.chunk.css",
+    "main.js": "/reactjs-product-list/static/js/main.ec48eacd.chunk.js",
+    "main.js.map": "/reactjs-product-list/static/js/main.ec48eacd.chunk.js.map",
+    "runtime-main.js": "/reactjs-product-list/static/js/runtime-main.71e8b62f.js",
+    "runtime-main.js.map": "/reactjs-product-list/static/js/runtime-main.71e8b62f.js.map",
+    "static/css/2.de424728.chunk.css": "/reactjs-product-list/static/css/2.de424728.chunk.css",
+    "static/js/2.2ac7c73f.chunk.js": "/reactjs-product-list/static/js/2.2ac7c73f.chunk.js",
+    "static/js/2.2ac7c73f.chunk.js.map": "/reactjs-product-list/static/js/2.2ac7c73f.chunk.js.map",
+    "index.html": "/reactjs-product-list/index.html",
+    "precache-manifest.2f76dfb684e9154e73372a094cc4688d.js": "/reactjs-product-list/precache-manifest.2f76dfb684e9154e73372a094cc4688d.js",
+    "service-worker.js": "/reactjs-product-list/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/reactjs-product-list/static/css/2.de424728.chunk.css.map",
+    "static/css/main.85ee5e94.chunk.css.map": "/reactjs-product-list/static/css/main.85ee5e94.chunk.css.map",
+    "static/js/2.2ac7c73f.chunk.js.LICENSE.txt": "/reactjs-product-list/static/js/2.2ac7c73f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71e8b62f.js",
+    "static/css/2.de424728.chunk.css",
+    "static/js/2.2ac7c73f.chunk.js",
+    "static/css/main.85ee5e94.chunk.css",
+    "static/js/main.ec48eacd.chunk.js"
+  ]
+}
